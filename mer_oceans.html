@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="mer_ocean.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Quiz sur les Océans</title>
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <h1 class="mb-4">Testez vos connaissances sur les océans et mers du monde</h1>
+        <form id="quiz-form">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Question 1 -->
+                    <div class="question-container mb-4">
+                        <div class="question mb-3">
+                            1. Quel est le plus grand océan du monde en termes de superficie ?
+                        </div>
+                        <ul class="options">
+                            <li><input type="radio" name="q1" value="a"> Océan Arctique </li>
+                            <li><input type="radio" name="q1" value="b"> Océan Atlantique </li>
+                            <li><input type="radio" name="q1" value="c"> Océan Pacifique </li>
+                        </ul>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question-container mb-4">
+                        <div class="question mb-3">
+                            2. Quel est le plus grand récif corallien du monde ?
+                        </div>
+                        <ul class="options">
+                            <li><input type="radio" name="q2" value="a"> Grande Barrière de Corail </li>
+                            <li><input type="radio" name="q2" value="b"> Récif de Tubbataha </li>
+                            <li><input type="radio" name="q2" value="c"> Récif de Belize </li>
+                        </ul>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="question-container mb-4">
+                        <div class="question mb-3">
+                            3. Quel est le nom de la fosse océanique la plus profonde ?
+                        </div>
+                        <ul class="options">
+                            <li><input type="radio" name="q3" value="a"> Fosse des Mariannes </li>
+                            <li><input type="radio" name="q3" value="b"> Fosse de Porto Rico </li>
+                            <li><input type="radio" name="q3" value="c"> Fosse de Java </li>
+                        </ul>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question-container mb-4">
+                        <div class="question mb-3">
+                            4. Quelle est la différence entre un océan et une mer ?
+                        </div>
+                        <ul class="options">
+                            <li>Les océans sont plus petits que les mers. <input type="radio" name="q4" value="a"> </li>
+                            <li>Les océans sont entourés de terre, les mers par des terres émergées.<input type="radio" name="q4" value="b">  </li>
+                            <li>Les océans sont plus salés que les mers en raison de leur plus grande taille. <input type="radio" name="q4" value="c"> </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <!-- Question 5 -->
+                    <div class="question-container mb-4">
+                        <div class="question mb-3">
+                            5. Quelle mer est située entre l'Italie et la Tunisie?
+                        </div>
+                        <ul class="options">
+                            <li><input type="radio" name="q5" value="a"> Mer rouge </li>
+                            <li><input type="radio" name="q5" value="b"> Mer Adriatique </li>
+                            <li><input type="radio" name="q5" value="c"> Mer Méditerranée </li>
+                        </ul>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question-container mb-4">
+                        <div class="question mb-3">
+                            6. Quelle mer est connue pour être la plus salée au monde?
+                        </div>
+                        <ul class="options">
+                            <li><input type="radio" name="q6" value="a"> Mer Caspienne </li>
+                            <li><input type="radio" name="q6" value="b"> Mer rouge </li>
+                            <li><input type="radio" name="q6" value="c"> Mer morte </li>
+                        </ul>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question-container mb-4">
+                        <div class="question mb-3">
+                            7. Quel est le nom de la mer intérieure entre la Grèce et la Turquie ?
+                        </div>
+                        <ul class="options">
+                            <li><input type="radio" name="q7" value="a"> Mer Égée </li>
+                            <li><input type="radio" name="q7" value="b"> Mer Ionienne </li>
+                            <li><input type="radio" name="q7" value="c"> Mer de Marmara </li>
+                        </ul>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question-container mb-4">
+                        <div class="question mb-3">
+                            8. Quelle mer est située entre l'Inde et le Sri Lanka ?
+                        </div>
+                        <ul class="options">
+                            <li><input type="radio" name="q8" value="a"> Mer d'Arabie </li>
+                            <li><input type="radio" name="q8" value="b"> Mer des Andaman </li>
+                            <li><input type="radio" name="q8" value="c"> Mer de Java </li>
+                        </ul>
+                    </div>
+
+                    <!-- Bouton Soumettre -->
+                    <button type="button" class="btn btn-primary" onclick="checkAnswers()">Soumettre</button>
+                </div>
+            </div>
+        </form>
+        <div id="result" class="mt-4 result-container"></div>
+
+        <script>
+            // Fonction qui vérifie les réponses de l'utilisateur et affiche les résultats
+            function checkAnswers() {
+                // Données du quiz, contenant les réponses correctes
+                const quizData = [
+                    { answer: 'c' },
+                    { answer: 'a' },
+                    { answer: 'a' },
+                    { answer: 'b' },
+                    { answer: 'c' },
+                    { answer: 'c' },
+                    { answer: 'a' },
+                    { answer: 'a' },
+                ];
+        
+                // Élément HTML où afficher les résultats du quiz
+                const resultElement = document.getElementById('result');
+        
+                // Sélection de tous les éléments de réponse qui sont cochés
+                const answerElements = document.querySelectorAll('input:checked');
+                // Conversion des éléments de réponse en tableau et récupération des valeurs
+                const userAnswers = Array.from(answerElements).map(input => input.value);
+        
+                // Vérification si l'utilisateur a répondu à toutes les questions
+                if (userAnswers.length !== quizData.length) {
+                    resultElement.innerHTML = '<p>Veuillez répondre à toutes les questions.</p>';
+                    return;
+                }
+        
+                // Calcul du nombre de réponses correctes et affichage des résultats
+                const correctCount = userAnswers.reduce((count, answer, index) => {
+                    const isCorrect = answer === quizData[index].answer;
+                    const questionNumber = index + 1;
+        
+                    // Sélection de l'élément de question correspondant
+                    const feedbackElement = document.getElementById(`question${questionNumber}`);
+        
+                    // Affichage du feedback pour chaque question
+                    if (feedbackElement) {
+                        if (!isCorrect) {
+                            feedbackElement.innerHTML = `<div class="question-feedback">Incorrect. La réponse correcte est "${quizData[index].answer.toUpperCase()}".</div>`;
+                        } else {
+                            // Suppression du feedback incorrect si la réponse est correcte
+                            feedbackElement.innerHTML = '';
+                        }
+                    }
+        
+                    // Retourne le nouveau compte en ajoutant 1 si la réponse est correcte
+                    return count + (isCorrect ? 1 : 0);
+                }, 0);
+        
+                // Affichage du résultat global du quiz
+                resultElement.innerHTML = `<p>Résultat: ${correctCount}/${quizData.length} correcte(s).</p>`;
+            }
+        </script>
+    </div>
+</body>
+
+</html>
+
+    

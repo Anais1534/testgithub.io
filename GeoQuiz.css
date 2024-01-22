@@ -1,0 +1,160 @@
+/* Style pour l'ensemble du corps (body) */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(p7.jpg);
+    font-family: 'Lucida Sans';
+}
+
+/* Style pour les sous-titres de niveau 2 (h2) */
+h2 {
+    font-size: 30px;
+}
+
+/* Style pour les sous-titres de niveau 4 (h4) */
+h4 {
+    color: rgb(255, 229, 183);
+    text-shadow: 0 0 5px rgb(237, 189, 111);
+}
+
+/* Style pour l'en-tête (header) */
+header {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Style pour la section principale */
+section {
+    background-color: rgba(71, 52, 28, 0.512);
+    text-align: center;
+    color: rgb(255, 236, 215);
+    padding: 50px;
+}
+
+/* Style pour les titres principaux (h1) */
+h1 {
+    font-size: 58px;
+    text-shadow: 0 0 7px rgb(237, 189, 111);
+    font-weight: bold;
+    font-family: 'Julee';
+    margin: 0px;
+    color: rgb(249, 215, 177);
+}
+
+/* Style pour la barre de navigation (nav) */
+nav {
+    background-color: #6e591e;
+    overflow: hidden;
+}
+
+/* Style pour les liens de navigation */
+nav a {
+    float: left;
+    font-weight: bold;
+    display: block;
+    color: rgb(249, 231, 211);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Style pour les sous-titres de niveau 4 (h4) */
+h4 {
+    color: rgb(255, 236, 215);
+}
+
+/* Style pour les images à l'intérieur de la section */
+section img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style pour le pied de page (footer) */
+footer {
+    background-color: #6e591e;
+    color: rgb(249, 231, 211);
+    text-align: center;
+    padding: 10px;
+}
+
+/* Style pour les options de quiz */
+.quiz-option {
+    text-align: center;
+    margin: 20px;
+}
+
+/* Style pour le bouton de démarrage du quiz */
+.start-quiz-button {
+    font-weight: bold;
+    display: flow-root;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: rgba(231, 198, 153, 0.642);
+    color: rgb(86, 43, 28);
+    border-radius: 5px;
+}
+
+/* Style pour survol du bouton de démarrage du quiz */
+.start-quiz-button:hover {
+    background-color: rgba(134, 91, 30, 0.93);
+    color: rgb(250, 219, 170);
+    padding: 20px;
+}
+
+/* Style pour les icônes sociales */
+.social-icon {
+    margin: 0 5px;
+    color: rgb(249, 231, 211);
+    text-decoration: none;
+}
+
+/* Media queries pour les écrans de taille moyenne, comme les tablettes */
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    nav a {
+        padding: 10px;
+    }
+
+    section {
+        padding: 30px;
+    }
+
+    .quiz-option {
+        margin: 15px;
+    }
+
+    .start-quiz-button {
+        padding: 8px 16px;
+    }
+
+    footer {
+        padding: 8px;
+    }
+}
+
+/* Media queries pour les petits écrans, comme les téléphones */
+@media only screen and (max-width: 480px) {
+    nav a {
+        padding: 8px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .quiz-option {
+        margin: 10px;
+    }
+
+    .start-quiz-button {
+        padding: 6px 12px;
+    }
+
+    footer {
+        padding: 6px;
+    }
+}

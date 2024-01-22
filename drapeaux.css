@@ -1,0 +1,83 @@
+/* Définition des styles pour l'ensemble du corps de la page */
+body {
+    font-family: 'Arial', sans-serif; /* Utilisation de la police Arial ou sans-serif si Arial n'est pas disponible */
+    background-image: url(drapeaux3.jpg); /* Définition de l'image de fond */
+}
+
+/* Stylisation du conteneur principal de la page */
+.container {
+    background-color: rgba(224, 224, 224, 0.432); /* Couleur de fond avec une légère transparence */
+    padding: 10px; /* Espacement intérieur */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Ombre légère */
+}
+
+/* Stylisation des titres de niveau 1 */
+h1 {
+    color: #ffffff; /* Couleur du texte en blanc */
+}
+
+/* Stylisation des conteneurs de questions */
+.question-container {
+    background-color: rgba(255, 255, 255, 0.545); /* Couleur de fond avec une transparence */
+    border: 1px solid #3494e6; /* Bordure solide */
+    border-radius: 8px; /* Coins arrondis */
+    padding: 15px; /* Espacement intérieur */
+    margin-bottom: 15px; /* Marge en bas */
+}
+
+/* Stylisation des images à l'intérieur des conteneurs de questions */
+.question-container img {
+    max-width: 90%; /* Largeur maximale de l'image */
+    height: auto; /* Hauteur automatique proportionnelle à la largeur */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Ombre légère */
+    transition: box-shadow 0.3s; /* Animation de la transition de l'ombre */
+}
+
+/* Stylisation des libellés des questions */
+.question-container label {
+    font-weight: bold; /* Texte en gras */
+    margin-bottom: 5px; /* Marge en bas */
+    display: block; /* Affichage en tant que bloc pour occuper toute la largeur */
+    color: #3494e6; /* Couleur du texte en bleu */
+    transition: color 0.3s; /* Animation de la transition de la couleur du texte */
+}
+
+/* Stylisation des champs de saisie des questions */
+.question-container input {
+    width: 100%; /* Largeur de 100% */
+    padding: 10px; /* Espacement intérieur */
+    margin-top: 5px; /* Marge en haut */
+    border: 1px solid #3494e6; /* Bordure solide */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+/* Stylisation du conteneur des résultats */
+.result-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Couleur de fond avec une forte transparence */
+    border: 1px solid #dee2e6; /* Bordure solide */
+    border-radius: 8px; /* Coins arrondis */
+    padding: 20px; /* Espacement intérieur */
+    margin-top: 20px; /* Marge en haut */
+}
+
+/* Stylisation des commentaires des questions */
+.question-feedback {
+    color: #ff4d4d; /* Couleur du texte en rouge */
+    margin-bottom: 10px; /* Marge en bas */
+}
+
+/* Stylisation de la disposition en colonnes flexibles */
+.column-layout {
+    display: flex; /* Affichage en tant que conteneur flexible */
+    flex-wrap: wrap; /* Permet le retour à la ligne des éléments */
+    justify-content: space-between; /* Répartition de l'espace entre les éléments */
+}
+
+/* Styles spécifiques pour les écrans de petite taille */
+@media (max-width: 767px) {
+    .column-layout {
+        flex-direction: column; /* Changement de la direction en colonnes */
+    }
+}

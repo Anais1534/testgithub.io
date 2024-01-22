@@ -1,0 +1,111 @@
+/* Style pour l'ensemble du corps (body) */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url(ocean_mer5.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #ffffff; /* Couleur du texte pour l'ensemble du corps */
+}
+
+/* Style pour le conteneur principal */
+.container {
+    background-color: rgba(224, 224, 224, 0.482);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Effet d'ombre pour le conteneur */
+    margin-top: 50px;
+}
+
+/* Style pour le titre principal */
+h1 {
+    text-align: center;
+}
+
+/* Style pour chaque conteneur de question individuelle */
+.question-container {
+    background-color: rgba(255, 255, 255, 0.508);
+    border: 1px solid #3494e6;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* Style pour les images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Effet d'ombre pour les images */
+    transition: box-shadow 0.3s; /* Transition en douceur pour l'effet d'ombre */
+}
+
+/* Style pour les étiquettes */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #3494e6; /* Couleur du texte pour les étiquettes */
+}
+
+/* Style pour les champs de saisie */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #3494e6;
+    border-radius: 5px;
+}
+
+/* Style pour la liste d'options */
+.options {
+    list-style-type: none;
+    color: #3494e6; /* Couleur du texte pour la liste d'options */
+    font-weight: bold;
+}
+
+.options li {
+    margin-bottom: 10px;
+}
+
+/* Style pour le conteneur de résultats */
+.result-container {
+    background-color: rgba(255, 255, 255, 0.653);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Effet d'ombre pour le conteneur de résultats */
+}
+
+/* Style pour les messages de rétroaction */
+.question-feedback {
+    color: #ff4d4d; /* Couleur du texte pour les messages de rétroaction */
+    margin-bottom: 10px;
+}
+
+/* Style pour le bouton primaire */
+.btn-primary {
+    background-color: #3494e6;
+    border: none;
+}
+
+/* Style pour survol du bouton primaire */
+.btn-primary:hover {
+    background-color: #2575a7;
+}
+
+/* Style pour une disposition en colonne */
+.column-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Requête média pour les écrans plus petits (max-width: 767px) */
+@media (max-width: 767px) {
+    .column-layout {
+        flex-direction: column; /* Passage à une disposition verticale pour les écrans plus petits */
+    }
+}
+
+
+
+

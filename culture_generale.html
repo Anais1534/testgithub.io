@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="culture_generale.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Quiz de Géographie</title>
+</head>
+
+<body class="bg-light">
+    <div class="container mt-5">
+        <form id="quiz-form">
+            <h1> Testez votre niveau de culture générale ! </h1>
+            <div class="question-container mb-4" id="question1">
+                <p>1. Quel est le plus grand océan du monde ?</p>
+                <label>
+                    <input type="radio" name="answer1" value="océan atlantique"> Océan Atlantique
+                </label>
+                <label>
+                    <input type="radio" name="answer1" value="océan pacifique"> Océan Pacifique
+                </label>
+                <label>
+                    <input type="radio" name="answer1" value="océan indien"> Océan Indien
+                </label>
+            </div>
+            <div class="question-container mb-4" id="question2">
+                <p>2. Quelle est la capitale de la France ?</p>
+                <label>
+                    <input type="radio" name="answer2" value="berlin"> Berlin
+                </label>
+                <label>
+                    <input type="radio" name="answer2" value="madrid"> Madrid
+                </label>
+                <label>
+                    <input type="radio" name="answer2" value="paris"> Paris
+                </label>
+            </div>
+            <div class="question-container mb-4" id="question3">
+                <p>3. Dans quel pays se trouve le Taj Mahal ?</p>
+                <label>
+                    <input type="radio" name="answer3" value="chine"> Chine
+                </label>
+                <label>
+                    <input type="radio" name="answer3" value="inde"> Inde
+                </label>
+                <label>
+                    <input type="radio" name="answer3" value="japon"> Japon
+                </label>
+            </div>
+            <div class="question-container mb-4" id="question4">
+                <p>4. Quel est le plus haut sommet du monde ?</p>
+                <label>
+                    <input type="radio" name="answer4" value="mont blanc"> Mont Blanc
+                </label>
+                <label>
+                    <input type="radio" name="answer4" value="mont everest"> Mont Everest
+                </label>
+                <label>
+                    <input type="radio" name="answer4" value="mont kilimandjaro"> Mont Kilimandjaro
+                </label>
+            </div>
+            <div class="question-container mb-4" id="question5">
+                <p>5. Où se trouve la Grande Barrière de Corail ?</p>
+                <label>
+                    <input type="radio" name="answer5" value="australie"> Australie
+                </label>
+                <label>
+                    <input type="radio" name="answer5" value="brésil"> Brésil
+                </label>
+                <label>
+                    <input type="radio" name="answer5" value="canada"> Canada
+                </label>
+            </div>
+            <div class="question-container mb-4" id="question6">
+                <p>6. Quelle est la plus grande île du monde ?</p>
+                <label>
+                    <input type="radio" name="answer6" value="groenland"> Groenland
+                </label>
+                <label>
+                    <input type="radio" name="answer6" value="islande"> Islande
+                </label>
+                <label>
+                    <input type="radio" name="answer6" value="australie"> Australie
+                </label>
+            </div>
+            <div class="question-container mb-4" id="question7">
+                <p>7. Quel est le plus grand continent d'Afrique ?</p>
+                <label>
+                    <input type="radio" name="answer7" value="afrique du nord"> Afrique du Nord
+                </label>
+                <label>
+                    <input type="radio" name="answer7" value="afrique de l'ouest"> Afrique de l'Ouest
+                </label>
+                <label>
+                    <input type="radio" name="answer7" value="afrique de l'est"> Afrique de l'Est
+                </label>
+            </div>
+            <div class="question-container mb-4" id="question8">
+                <p>8. Quelle est la plus grande île de la Méditerranée ?</p>
+                <label>
+                    <input type="radio" name="answer8" value="crète"> Crète
+                </label>
+                <label>
+                    <input type="radio" name="answer8" value="sicile"> Sicile
+                </label>
+                <label>
+                    <input type="radio" name="answer8" value="corse"> Corse
+                </label>
+            </div>
+            <div class="question-container mb-4" id="question9">
+                <p>9. Quel est le désert le plus chaud du monde ?</p>
+                <label>
+                    <input type="radio" name="answer9" value="sahara"> Sahara
+                </label>
+                <label>
+                    <input type="radio" name="answer9" value="gobi"> Gobi
+                </label>
+                <label>
+                    <input type="radio" name="answer9" value="karakoum"> Karakoum
+                </label>
+            </div>
+            <div class="question-container mb-4" id="question10">
+                <p>10. Dans quel pays se trouve le canal de Panama ?</p>
+                <label>
+                    <input type="radio" name="answer10" value="colombie"> Colombie
+                </label>
+                <label>
+                    <input type="radio" name="answer10" value="costa rica"> Costa Rica
+                </label>
+                <label>
+                    <input type="radio" name="answer10" value="panama"> Panama
+                </label>
+            </div>
+            <button type="button" class="btn btn-primary" id="submit-button">Soumettre</button>
+        </form>
+
+        <div id="result" class="mt-4"></div>
+
+        <script>
+            // Attend que le DOM soit entièrement chargé avant d'exécuter le code JavaScript
+            document.addEventListener('DOMContentLoaded', function () {
+                // Données du quiz, contenant les réponses correctes
+                const quizData = [
+                    { answer: 'océan pacifique' },
+                    { answer: 'paris' },
+                    { answer: 'inde' },
+                    { answer: 'mont everest' },
+                    { answer: 'australie' },
+                    { answer: 'groenland' },
+                    { answer: 'afrique du nord' },
+                    { answer: 'sicile' },
+                    { answer: 'sahara' },
+                    { answer: 'panama' },
+                ];
+        
+                // Élément HTML où afficher les résultats du quiz
+                const resultElement = document.getElementById('result');
+        
+                // Fonction pour vérifier les réponses lorsque le bouton est cliqué
+                function checkAnswers() {
+                    // Sélection de tous les boutons radio qui sont cochés
+                    const answerRadios = document.querySelectorAll('input[type="radio"]:checked');
+                    // Création d'un objet pour stocker les réponses de l'utilisateur
+                    const userAnswers = {};
+        
+                    // Parcours de chaque bouton radio sélectionné et stockage de la réponse dans l'objet
+                    answerRadios.forEach(radio => {
+                        const questionNumber = radio.name.replace('answer', '');
+                        const answerValue = radio.value;
+                        userAnswers[questionNumber] = answerValue;
+                    });
+        
+                    // Création d'un tableau de résultats en comparant les réponses de l'utilisateur avec les réponses correctes
+                    const results = Object.keys(userAnswers).map(questionNumber => {
+                        const userAnswer = userAnswers[questionNumber];
+                        const correctAnswer = quizData[questionNumber - 1].answer;
+                        const isCorrect = userAnswer === correctAnswer;
+        
+                        return {
+                            userAnswer: userAnswer,
+                            isCorrect: isCorrect,
+                            correctAnswer: correctAnswer,
+                            questionNumber: parseInt(questionNumber)
+                        };
+                    });
+        
+                    // Affichage des résultats
+                    displayResults(results);
+                }
+        
+                // Fonction pour afficher les résultats du quiz
+                function displayResults(results) {
+                    // HTML pour afficher les résultats
+                    let resultHTML = '<div class="result-container column-layout">';
+        
+                    // Parcours des résultats de chaque question
+                    results.forEach(result => {
+                        const { questionNumber, isCorrect, correctAnswer } = result;
+                        // Sélection de l'élément de question correspondant
+                        const questionElement = document.getElementById(`question${questionNumber}`);
+        
+                        // Si la réponse est incorrecte, afficher le feedback
+                        if (!isCorrect) {
+                            const feedbackElement = document.createElement('div');
+                            feedbackElement.classList.add('question-feedback', 'incorrect-feedback');
+                            feedbackElement.innerHTML = `<p>Q${questionNumber}: Incorrect. La réponse correcte est "${correctAnswer}".</p>`;
+                            questionElement.appendChild(feedbackElement);
+                        } else {
+                            // Supprimer le feedback incorrect si la réponse est correcte
+                            const incorrectFeedback = questionElement.querySelector('.question-feedback');
+                            if (incorrectFeedback) {
+                                incorrectFeedback.remove();
+                            }
+                        }
+                    });
+        
+                    // Calcul du nombre de réponses correctes et affichage du résultat global
+                    const correctCount = results.filter(result => result.isCorrect).length;
+                    resultHTML += `<p>Résultat: ${correctCount}/${results.length} correcte(s).</p>`;
+        
+                    resultHTML += '</div>';
+                    // Affichage des résultats dans l'élément spécifié
+                    resultElement.innerHTML = resultHTML;
+                }
+        
+                // Ajout d'un gestionnaire d'événements au bouton de soumission du formulaire
+                const submitButton = document.getElementById('submit-button');
+                submitButton.addEventListener('click', checkAnswers);
+            });
+        </script>
+    </div>
+</body>
+
+</html>
+
+
+
+

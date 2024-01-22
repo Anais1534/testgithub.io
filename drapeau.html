@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="drapeaux.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Quiz de Géographie</title>
+</head>
+
+<body class="bg-light">
+    <div class="container mt-5">
+        <form id="quiz-form">
+            <h1 class="text-center mb-4">Devinez le pays !</h1>
+            <div class="row">
+                <!-- Première colonne -->
+                <div class="col-md-4">
+                    <!-- Question 1 -->
+                    <div id="question1" class="question-container mb-4">
+                        <img src="https://s1.1zoom.me/big3/339/338457-Berserker.jpg" alt="Drapeau du pays Suisse" class="img-fluid">
+                        <label for="answer1">Pays 1</label>
+                        <input type="text" id="answer1" name="answer1" class="form-control" placeholder="Nom du pays" required>
+                    </div>
+                    <!-- Question 2 -->
+                    <div id="question2" class="question-container mb-4">
+                        <img src="https://download.vikidia.org/vikidia/fr/images/thumb/2/24/Drapeau_de_la_Chine.svg/1200px-Drapeau_de_la_Chine.svg.png" alt="Drapeau du pays Chine" class="img-fluid">
+                        <label for="answer2">Pays 2</label>
+                        <input type="text" id="answer2" name="answer2" class="form-control" placeholder="Nom du pays" required>
+                    </div>
+                    <!-- Question 3 -->
+                    <div id="question3" class="question-container mb-4">
+                        <img src="http://www.drapeaux-du-monde.fr/drapeaux-du-monde/drapeau-tunisie.jpg" alt="Drapeau du pays Tunisie" class="img-fluid">
+                        <label for="answer3">Pays 3</label>
+                        <input type="text" id="answer3" name="answer3" class="form-control" placeholder="Nom du pays" required>
+                    </div>
+                </div>
+
+                <!-- Deuxième colonne -->
+                <div class="col-md-4">
+                    <!-- Question 4 -->
+                    <div id="question4" class="question-container mb-4">
+                        <img src="https://www.countryflags.com/wp-content/uploads/flag-jpg-xl-7-2048x1283.jpg" alt="Drapeau du pays Argentine" class="img-fluid">
+                        <label for="answer4">Pays 4</label>
+                        <input type="text" id="answer4" name="answer4" class="form-control" placeholder="Nom du pays" required>
+                    </div>
+                    <!-- Question 5 -->
+                    <div id="question5" class="question-container mb-4">
+                        <img src="https://img.freepik.com/vecteurs-premium/drapeau-national-du-monde-turquie_180401-4779.jpg" alt="Drapeau du pays Turquie" class="img-fluid">
+                        <label for="answer5">Pays 5</label>
+                        <input type="text" id="answer5" name="answer5" class="form-control" placeholder="Nom du pays" required>
+                    </div>
+                    <!-- Question 6 -->
+                    <div id="question6" class="question-container mb-4">
+                        <img src="https://qph.cf2.quoracdn.net/main-qimg-152fba02fd5eddc4cfc9a72e3a2cd095" alt="Drapeau du pays Allemagne" class="img-fluid">
+                        <label for="answer6">Pays 6</label>
+                        <input type="text" id="answer6" name="answer6" class="form-control" placeholder="Nom du pays" required>
+                    </div>
+                </div>
+
+                <!-- Troisième colonne -->
+                <div class="col-md-4">
+                    <!-- Question 7 -->
+                    <div id="question7" class="question-container mb-4">
+                        <img src="https://www.drapeaux-nationaux.fr/media/477/drapeau-suede.png" alt="Drapeau du pays Suède" class="img-fluid">
+                        <label for="answer7">Pays 7</label>
+                        <input type="text" id="answer7" name="answer7" class="form-control" placeholder="Nom du pays" required>
+                    </div>
+                    <!-- Question 8 -->
+                    <div id="question8" class="question-container mb-4">
+                        <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/21CNtbobqgL._AC_UF1000,1000_QL80_.jpg" alt="Drapeau du pays Egypte" class="img-fluid">
+                        <label for="answer8">Pays 8</label>
+                        <input type="text" id="answer8" name="answer8" class="form-control" placeholder="Nom du pays" required>
+                    </div>
+                    <!-- Question 9 -->
+                    <div id="question9" class="question-container mb-4">
+                        <img src="https://www.palmarium.biz/wp-content/uploads/2021/12/madagascar-ge63a1d432_1280.png" alt="Drapeau du pays Madagascar" class="img-fluid">
+                        <label for="answer9">Pays 9</label>
+                        <input type="text" id="answer9" name="answer9" class="form-control" placeholder="Nom du pays" required>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" id="submit-button">Soumettre</button>
+        </form>
+
+        <div id="result" class="mt-4"></div>
+
+        <script>
+            // Attend que le DOM soit entièrement chargé avant d'exécuter le code JavaScript
+            document.addEventListener('DOMContentLoaded', function () {
+                // Données du quiz, contenant les réponses correctes
+                const quizData = [
+                    { answer: 'suisse' },
+                    { answer: 'chine' },
+                    { answer: 'tunisie' },
+                    { answer: 'argentine' },
+                    { answer: 'turquie' },
+                    { answer: 'allemagne' },
+                    { answer: 'suède' },
+                    { answer: 'egypte' },
+                    { answer: 'madagascar' },
+                ];
+        
+                // Élément HTML où afficher les résultats du quiz
+                const resultElement = document.getElementById('result');
+        
+                // Fonction pour vérifier les réponses lorsque le bouton est cliqué
+                function checkAnswers() {
+                    // Sélection de tous les champs de réponse du formulaire
+                    const answerInputs = document.querySelectorAll('input[name^="answer"]');
+                    // Conversion des réponses de l'utilisateur en minuscules et suppression des espaces
+                    const userAnswers = Array.from(answerInputs).map(input => input.value.trim().toLowerCase());
+        
+                    // Vérification si l'utilisateur a répondu à toutes les questions
+                    if (userAnswers.some(answer => answer === '')) {
+                        resultElement.innerHTML = '<p>Veuillez répondre à toutes les questions.</p>';
+                        return;
+                    }
+        
+                    // Récupération des réponses correctes du quiz
+                    const correctAnswers = quizData.map(question => question.answer.toLowerCase());
+        
+                    // Comparaison des réponses de l'utilisateur avec les réponses correctes
+                    const results = userAnswers.map((userAnswer, index) => {
+                        return {
+                            userAnswer: userAnswer,
+                            isCorrect: userAnswer === correctAnswers[index],
+                            correctAnswer: correctAnswers[index],
+                            questionNumber: index + 1
+                        };
+                    });
+        
+                    // Affichage des résultats
+                    displayResults(results);
+                }
+        
+                // Fonction pour afficher les résultats du quiz
+                function displayResults(results) {
+                    // HTML pour afficher les résultats
+                    let resultHTML = '<div class="result-container column-layout">';
+        
+                    // Parcours des résultats de chaque question
+                    results.forEach(result => {
+                        const { questionNumber, isCorrect, correctAnswer } = result;
+                        // Sélection de l'élément de question correspondant
+                        const questionElement = document.getElementById(`question${questionNumber}`);
+        
+                        // Si la réponse est incorrecte, afficher le feedback
+                        if (!isCorrect) {
+                            const feedbackElement = document.createElement('div');
+                            feedbackElement.classList.add('question-feedback', 'incorrect-feedback');
+                            feedbackElement.innerHTML = `<p>Q${questionNumber}: Incorrect. La réponse correcte est "${correctAnswer}".</p>`;
+                            questionElement.appendChild(feedbackElement);
+                        } else {
+                            // Supprimer le feedback incorrect si la réponse est correcte
+                            const incorrectFeedback = questionElement.querySelector('.question-feedback');
+                            if (incorrectFeedback) {
+                                incorrectFeedback.remove();
+                            }
+                        }
+                    });
+        
+                    // Calcul du nombre de réponses correctes et affichage du résultat global
+                    const correctCount = results.filter(result => result.isCorrect).length;
+                    resultHTML += `<p>Résultat: ${correctCount}/${results.length} correcte(s).</p>`;
+        
+                    resultHTML += '</div>';
+                    // Affichage des résultats dans l'élément spécifié
+                    resultElement.innerHTML = resultHTML;
+                }
+        
+                // Ajout d'un gestionnaire d'événements au bouton de soumission du formulaire
+                const submitButton = document.getElementById('submit-button');
+                submitButton.addEventListener('click', checkAnswers);
+            });
+        </script>
+    </div>
+</body>
+
+</html>
